@@ -5,7 +5,8 @@ import AuthLayout from './layouts/auth';
 import DashboardLayout from './layouts/dashboard';
 
 // pages
-import AuthPage from './pages/auth';
+import LoginPage from './pages/auth/login';
+import RegisterPage from './pages/auth/register';
 import DashboardPage from './pages/dashboard';
 
 const router = createBrowserRouter([
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <AuthPage />
+                element: <LoginPage />
+            },
+            {
+                path: 'register',
+                element: <RegisterPage />
             }
         ]
     },
