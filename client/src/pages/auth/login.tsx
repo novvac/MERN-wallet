@@ -4,33 +4,26 @@ import { Controller, useForm } from 'react-hook-form';
 
 import AuthHeader from '../../components/partial/auth-header';
 import FormControl from '../../components/form-control';
-import { useEffect } from 'react';
+
+const formInputs = [{
+    name: 'email',
+    type: TextField,
+    gridProps: { xs: 12 },
+    itemProps: {
+        placeholder: 'Email address',
+        type: 'email'
+    }
+}, {
+    name: 'password',
+    type: TextField,
+    gridProps: { xs: 12 },
+    itemProps: {
+        placeholder: 'Password',
+        type: 'password'
+    }
+}]
 
 export default function LoginPage() {
-    const { control, formState: { errors }, handleSubmit } = useForm({
-        defaultValues: {
-            firstName: ''
-        }
-    });
-
-    const formInputs = [{
-        name: 'email',
-        type: TextField,
-        gridProps: { xs: 12 },
-        itemProps: {
-            placeholder: 'Email address',
-            type: 'email'
-        }
-    }, {
-        name: 'password',
-        type: TextField,
-        gridProps: { xs: 12 },
-        itemProps: {
-            placeholder: 'Password',
-            type: 'password'
-        }
-    }]
-
     return (
         <>
             <AuthHeader
